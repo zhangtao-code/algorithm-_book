@@ -1,4 +1,4 @@
-package cacpter1;
+package cacpter1_1;
 
 public class Example1_1_10 {
     public static void main(String[] args) {
