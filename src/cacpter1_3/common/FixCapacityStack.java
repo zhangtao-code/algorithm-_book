@@ -69,6 +69,8 @@ public class FixCapacityStack<T> implements Stack<T>{
 
     @Override
     public Iterator<T> iterator() {
-       return new IteratorArray<>(array);
+        Object []clone=new Object[size];
+        System.arraycopy(array,0,clone,0,size);
+       return new IteratorArray<>(clone);
     }
 }

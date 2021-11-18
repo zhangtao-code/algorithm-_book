@@ -12,6 +12,20 @@ public class LinkedStack <T>implements Stack<T>{
     public LinkedStack() {
     }
 
+    public static <T> LinkedStack<T> copy(Stack<T>stack){
+        Stack<T>temp=new LinkedStack<>();
+        LinkedStack<T>result=new LinkedStack<>();
+        Iterator<T> iterator= stack.iterator();
+        while (iterator.hasNext()){
+            temp.push(iterator.next());
+        }
+        while (!temp.isEmpty()){
+            result.push(temp.pop());
+        }
+        return result;
+    }
+
+
     @Override
     public void push(T t) {
         size++;

@@ -12,7 +12,7 @@ public class IteratorArray<T> implements Iterator<T> {
 
     @Override
     public boolean hasNext() {
-        return point<array.length&&point>0;
+        return point>0;
     }
 
     @Override
