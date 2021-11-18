@@ -31,6 +31,9 @@ public class FixCapacityStack<T> implements Stack<T>{
     protected void resize(){
         System.out.println("开始扩容");
         int length=array.length*(1+factor);
+        if(length==size){
+            length*=2;
+        }
         Object []dest=new Object[length];
         System.arraycopy(array,0,dest,0,array.length);
         array=dest;
