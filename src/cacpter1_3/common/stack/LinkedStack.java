@@ -1,9 +1,12 @@
-package cacpter1_3.common;
+package cacpter1_3.common.stack;
+
+import cacpter1_3.common.IteratorArray;
+import cacpter1_3.common.Node;
 
 import java.util.Iterator;
 
-public class LinkedStack <T>implements Stack<T>{
-    protected Node<T>last;
+public class LinkedStack <T>implements Stack<T> {
+    protected Node<T> last;
     protected int size;
     public LinkedStack(T t) {
         last=new Node<>(t);

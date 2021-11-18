@@ -1,8 +1,10 @@
-package cacpter1_3.common;
+package cacpter1_3.common.stack;
+
+import cacpter1_3.common.IteratorArray;
 
 import java.util.Iterator;
 
-public class FixCapacityStack<T> implements Stack<T>{
+public class FixCapacityStack<T> implements Stack<T> {
     private int size;
     private Object[]array;
     private int factor=1;

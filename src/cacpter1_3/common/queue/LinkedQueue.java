@@ -1,9 +1,12 @@
-package cacpter1_3.common;
+package cacpter1_3.common.queue;
+
+import cacpter1_3.common.IteratorArray;
+import cacpter1_3.common.Node;
 
 import java.util.Iterator;
 
-public class LinkedQueue<T> implements Queue<T>{
-    protected Node<T>first;
+public class LinkedQueue<T> implements Queue<T> {
+    protected Node<T> first;
     protected Node<T>last;
     protected int size;
 

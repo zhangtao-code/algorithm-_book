@@ -1,9 +1,9 @@
 package cacpter1_3;
 
-import cacpter1_3.common.FixCapacityStack;
-import cacpter1_3.common.LinkedQueue;
-import cacpter1_3.common.Queue;
-import cacpter1_3.common.Stack;
+import cacpter1_3.common.stack.FixCapacityStack;
+import cacpter1_3.common.queue.LinkedQueue;
+import cacpter1_3.common.queue.Queue;
+import cacpter1_3.common.stack.Stack;
 
 
 public class Homework1_3_15 {

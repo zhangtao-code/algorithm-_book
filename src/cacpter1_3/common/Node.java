@@ -1,9 +1,9 @@
 package cacpter1_3.common;
 
 public class Node<T> {
-    protected Node<T>pre;
-    protected T t;
-    protected Node<T>next;
+    public Node<T>pre;
+    public T t;
+    public Node<T>next;
 
     public Node(Node<T> pre, T t) {
         this.pre = pre;

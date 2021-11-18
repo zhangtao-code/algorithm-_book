@@ -1,8 +1,11 @@
-package cacpter1_3.common;
+package cacpter1_3.common.queue;
+
+import cacpter1_3.common.IteratorArray;
+import cacpter1_3.common.queue.Queue;
 
 import java.util.Iterator;
 
-public class ArrayQueue<T> implements Queue<T>{
+public class ArrayQueue<T> implements Queue<T> {
     protected Object[]array;
     protected int factor;
     protected int read;
