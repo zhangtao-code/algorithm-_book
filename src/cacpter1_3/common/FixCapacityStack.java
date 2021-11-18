@@ -41,8 +41,19 @@ public class FixCapacityStack<T> implements Stack<T>{
 
     @Override
     public T pop() {
+        if(size==0){
+            return null;
+        }
         T t= (T) array[size-1];
         array[--size]=null;
+        return t;
+    }
+    @Override
+    public T peek() {
+        if(size==0){
+            return null;
+        }
+        T t= (T) array[size-1];
         return t;
     }
 

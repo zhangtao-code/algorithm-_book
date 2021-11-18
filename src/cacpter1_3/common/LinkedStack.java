@@ -39,6 +39,13 @@ public class LinkedStack <T>implements Stack<T>{
         size--;
         return t;
     }
+    @Override
+    public T peek() {
+        if(last==null){
+            return null;
+        }
+        return last.t;
+    }
 
     @Override
     public boolean isEmpty() {
