@@ -88,10 +88,6 @@ public class SingleLinkedQueue<T> implements LinkedNode<T>{
         last=pre;
     }
 
-    @Override
-    public void max() {
-
-    }
 
     @Override
     public void removeAfter(int k) {
@@ -124,10 +120,15 @@ public class SingleLinkedQueue<T> implements LinkedNode<T>{
     }
 
     @Override
+    public Node<T> getLast() {
+        return last;
+    }
+
+    @Override
     public void insertAfter(LinkedNode<T> linkedNode) {
         if(first==null){
            first=linkedNode.getFirst();
-           last=first;
+           last= linkedNode.getLast();
         }else{
             last.next=linkedNode.getFirst();
         }
