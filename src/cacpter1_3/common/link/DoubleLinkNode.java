@@ -69,14 +69,64 @@ public class DoubleLinkNode<T> implements LinkedNode<T> {
 
     @Override
     public void remove(T t) {
-
+        Node<T>current=first;
+        while (current!=null){
+            if(current.getT().equals(t)){
+                Node<T>pre=current.getPre();
+                Node<T>next=current.getNext();
+                if(pre==null){
+                    if(next==null){
+                        first=last=null;
+                        return;
+                    }else{
+                        first=next;
+                        next.pre=null;
+                        current.next=null;
+                        current=next;
+                    }
+                }else{
+                    if(next==null){
+                        current.pre=null;
+                        pre.next=null;
+                        last=pre;
+                        return;
+                    }else{
+                        pre.next=next;
+                        next.pre=pre;
+                        current.next=null;
+                        current.pre=null;
+                        current=next;
+                    }
+                }
+            }else{
+                current=current.next;
+            }
+        }
     }
 
 
 
     @Override
     public void removeAfter(int k) {
-        
+        Node<T>current=first;
+        int index=0;
+        while (index<k){
+            if(current==null){
+                return;
+            }
+            index++;
+            current=current.next;
+        }
+        if(current==null){
+            return;
+        }
+        Node<T>next=current.getNext();
+        if(next==null){
+            return;
+        }
+        current.next=null;
+        next.pre=null;
+        last=current;
     }
 
     @Override
@@ -102,5 +152,32 @@ public class DoubleLinkNode<T> implements LinkedNode<T> {
     @Override
     public Node<T> getFirst() {
         return first;
+    }
+
+    @Override
+    public void reverse() {
+        Node<T>current=first;
+        Node<T>newLast=null;
+        Node<T>newFirst=null;
+        while (current!=null){
+            Node<T>pre=current.getPre();
+            Node<T>next=current.getNext();
+            if(newLast==null){
+                newLast=current;
+                newFirst=current;
+                current.next=null;
+                current.pre=null;
+            }else{
+                current.next=pre;
+                current.pre=null;
+                newFirst=current;
+            }
+            if(next!=null){
+                next.pre=null;
+            }
+            current=next;
+        }
+        first=newFirst;
+        last=newLast;
     }
 }

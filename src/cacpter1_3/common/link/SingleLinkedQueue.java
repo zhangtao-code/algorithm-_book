@@ -133,4 +133,24 @@ public class SingleLinkedQueue<T> implements LinkedNode<T>{
             last.next=linkedNode.getFirst();
         }
     }
+
+    @Override
+    public void reverse() {
+       Node<T>current=first;
+       Node<T>newFirst=null;
+       Node<T>newLast=null;
+       while (current!=null){
+           Node<T>next=current.getNext();
+           newFirst=current;
+           if(newLast==null){
+               newLast=current;
+               current.next=null;
+           }else{
+               current.next=newFirst;
+           }
+          current=next;
+       }
+       first=newFirst;
+       last=newLast;
+    }
 }
