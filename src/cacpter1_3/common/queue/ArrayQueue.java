@@ -18,7 +18,14 @@ public class ArrayQueue<T> implements Queue<T> {
     public ArrayQueue(int factor) {
         this.factor = factor;
     }
-
+    public ArrayQueue(ArrayQueue<T>src){
+        array=new Object[src.array.length];
+        System.arraycopy(src,0,array,0,src.array.length);
+        factor=src.factor;
+        read=src.read;
+        write=src.write;
+        size=src.size;
+    }
     @Override
     public void enqueue(T t) {
         if(size>=array.length){
