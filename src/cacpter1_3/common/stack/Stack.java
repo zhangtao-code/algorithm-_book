@@ -5,8 +5,16 @@ import java.util.Iterator;
 public interface Stack<T> extends Iterable<T>{
     void push(T t);
     T pop();
-    boolean isEmpty();
-    T peek();
+    default boolean isEmpty(){
+        return size()==0;
+    }
+   default T peek(){
+       T t=pop();
+       if(t!=null){
+           push(t);
+       }
+       return t;
+   }
     default void catenation(Stack<T> stack) {
         Stack<T>reverse=reverse();
         while (!reverse.isEmpty()){
