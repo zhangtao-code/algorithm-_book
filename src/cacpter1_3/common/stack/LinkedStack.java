@@ -83,9 +83,25 @@ public class LinkedStack <T>implements Stack<T> {
         Object []array=new Object[size];
         Node current=last;
         for (int i = size; i > 0; i--) {
-            array[size-1]=current;
+            array[i-1]=current.getT();
             current=current.pre;
         }
         return new IteratorArray<>(array);
     }
+
+    @Override
+    public Stack<T> reverse() {
+        Stack<T>temp=new LinkedStack<>();
+        Stack<T>reverse=new LinkedStack<>();
+        Iterator<T>iterator=iterator();
+        while (iterator.hasNext()){
+            temp.push(iterator.next());
+        }
+        while (!temp.isEmpty()){
+            reverse.push(temp.pop());
+        }
+        return reverse;
+    }
+
+
 }

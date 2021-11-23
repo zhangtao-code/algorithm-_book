@@ -69,6 +69,8 @@ public class FixCapacityStack<T> implements Stack<T> {
         return size;
     }
 
+
+
     @Override
     public Iterator<T> iterator() {
         Object []clone=new Object[size];
