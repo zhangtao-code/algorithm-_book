@@ -12,6 +12,6 @@ public interface LinkedNode<T> {
      void insertAfter(LinkedNode<T>linkedNode);
      Node<T> getFirst();
      Node<T> getLast();
-
      void reverse();
+     int size();
 }

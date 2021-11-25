@@ -5,9 +5,15 @@ import cacpter1.cacpter1_3.common.Node;
 public class SingleLinkedQueue<T> implements LinkedNode<T>{
     protected Node<T> first;
     protected Node<T> last;
+    protected int size;
+    @Override
+    public int size() {
+        return size;
+    }
 
     @Override
     public void insert(T t) {
+        size++;
         if(first==null){
             first=last=new Node<T>(t);
             return;
@@ -21,6 +27,7 @@ public class SingleLinkedQueue<T> implements LinkedNode<T>{
         if(first==null){
             return;
         }
+        size--;
         if(first.next==null){
             first=null;
             last=null;
@@ -40,6 +47,7 @@ public class SingleLinkedQueue<T> implements LinkedNode<T>{
             return;
         }
         if(k==0){
+            size--;
             if(first==last){
                 first=null;
                 last=null;
@@ -60,6 +68,7 @@ public class SingleLinkedQueue<T> implements LinkedNode<T>{
             }
             index++;
         }
+        size--;
         if(node.next==null){
             pre.next=null;
             last=pre;
@@ -86,6 +95,7 @@ public class SingleLinkedQueue<T> implements LinkedNode<T>{
         Node<T>pre=null;
         while (current!=null){
             if(current.getT().equals(t)){
+                size--;
                 if(pre==null){
                     first=current.next;
                 }
@@ -122,6 +132,10 @@ public class SingleLinkedQueue<T> implements LinkedNode<T>{
         }
         pre.next=null;
         last=pre;
+        while (current!=null){
+            size--;
+            current= current.next;
+        }
     }
 
     @Override
@@ -136,6 +150,7 @@ public class SingleLinkedQueue<T> implements LinkedNode<T>{
 
     @Override
     public void insertAfter(LinkedNode<T> linkedNode) {
+        size+=linkedNode.size();
         if(first==null){
            first=linkedNode.getFirst();
            last= linkedNode.getLast();

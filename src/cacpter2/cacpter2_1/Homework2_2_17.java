@@ -19,7 +19,7 @@ public class Homework2_2_17 {
 
     }
     protected static void sort(LinkedNode<Integer>linkedNode){
-
+        
     }
 
 }

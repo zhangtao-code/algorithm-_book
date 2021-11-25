@@ -5,9 +5,15 @@ import cacpter1.cacpter1_3.common.Node;
 public class DoubleLinkNode<T> implements LinkedNode<T> {
     protected Node<T>first;
     protected Node<T> last;
+    protected int size;
+    @Override
+    public int size() {
+        return 0;
+    }
 
     @Override
     public void insert(T t) {
+        size++;
         if(first==null){
             first=last=new Node<T>(t);
             return;
@@ -22,6 +28,7 @@ public class DoubleLinkNode<T> implements LinkedNode<T> {
         if(first==null){
             return;
         }
+        size--;
         Node<T>pre=last.getPre();
         last.pre=null;
         pre.next=null;
@@ -42,6 +49,7 @@ public class DoubleLinkNode<T> implements LinkedNode<T> {
         if(node==null){
             return;
         }
+        size--;
         Node<T>pre= node.getPre();
         if(pre==null){
             if(first==last){
@@ -83,6 +91,7 @@ public class DoubleLinkNode<T> implements LinkedNode<T> {
         Node<T>current=first;
         while (current!=null){
             if(current.getT().equals(t)){
+                size--;
                 Node<T>pre=current.getPre();
                 Node<T>next=current.getNext();
                 if(pre==null){
@@ -138,6 +147,11 @@ public class DoubleLinkNode<T> implements LinkedNode<T> {
         current.next=null;
         next.pre=null;
         last=current;
+        size--;
+        while (next.getNext()!=null){
+            next=next.getNext();
+            size--;
+        }
     }
 
     @Override
@@ -151,6 +165,7 @@ public class DoubleLinkNode<T> implements LinkedNode<T> {
         if(linkedNode.getFirst()==null){
             return;
         }
+        size+= linkedNode.size();
         if(first==null){
             first=linkedNode.getFirst();
             last=linkedNode.getLast();
