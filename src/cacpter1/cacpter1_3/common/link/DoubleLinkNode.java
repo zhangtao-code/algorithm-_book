@@ -7,6 +7,17 @@ public class DoubleLinkNode<T> implements LinkedNode<T> {
     protected Node<T> last;
 
     @Override
+    public void insert(T t) {
+        if(first==null){
+            first=last=new Node<T>(t);
+            return;
+        }
+        Node<T>node=new Node<T>(last,t);
+        last.next=node;
+        last=node;
+    }
+
+    @Override
     public void deleteLast() {
         if(first==null){
             return;

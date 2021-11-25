@@ -7,6 +7,16 @@ public class SingleLinkedQueue<T> implements LinkedNode<T>{
     protected Node<T> last;
 
     @Override
+    public void insert(T t) {
+        if(first==null){
+            first=last=new Node<T>(t);
+            return;
+        }
+        Node<T>node=new Node<T>(t);
+        last.next=node;
+    }
+
+    @Override
     public void deleteLast() {
         if(first==null){
             return;

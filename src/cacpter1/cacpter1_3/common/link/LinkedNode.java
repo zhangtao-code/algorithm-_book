@@ -3,7 +3,7 @@ package cacpter1.cacpter1_3.common.link;
 import cacpter1.cacpter1_3.common.Node;
 
 public interface LinkedNode<T> {
-
+     void insert(T t);
      void deleteLast();
      void delete(int k);
      boolean find(T t);
