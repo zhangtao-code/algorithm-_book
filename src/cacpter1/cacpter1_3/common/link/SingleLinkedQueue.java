@@ -6,6 +6,21 @@ public class SingleLinkedQueue<T> implements LinkedNode<T>{
     protected Node<T> first;
     protected Node<T> last;
     protected int size;
+
+    @Override
+    public Node<T> findIndex(int k) {
+        if(k>=size){
+            return null;
+        }
+        Node<T>current=first;
+        int index=0;
+        while (index<k){
+            current=current.next;
+            index++;
+        }
+        return current;
+    }
+
     @Override
     public int size() {
         return size;

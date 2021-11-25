@@ -6,6 +6,21 @@ public class DoubleLinkNode<T> implements LinkedNode<T> {
     protected Node<T>first;
     protected Node<T> last;
     protected int size;
+
+    @Override
+    public Node<T> findIndex(int k) {
+        if(k>=size){
+            return null;
+        }
+        Node<T>current=first;
+        int index=0;
+        while (index<k){
+            current=current.next;
+            index++;
+        }
+        return current;
+    }
+
     @Override
     public int size() {
         return 0;
@@ -205,5 +220,17 @@ public class DoubleLinkNode<T> implements LinkedNode<T> {
         }
         first=newFirst;
         last=newLast;
+    }
+    public void format(){
+        Node<T>current=first;
+        while (current.getPre()!=null){
+            current=current.pre;
+        }
+        first=current;
+        current=last;
+        while (current.getNext()!=null){
+            current=current.next;
+        }
+        last=current;
     }
 }

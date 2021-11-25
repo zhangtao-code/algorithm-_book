@@ -9,7 +9,7 @@ public class Merge {
     protected static  long all=0;
     public static void main(String []args){
         List<Integer> list=new ArrayList<>();
-        for (int i = 0; i < 100000; i++) {
+        for (int i = 0; i < 10; i++) {
             list.add(new Random().nextInt(1000));
         }
         Collections.shuffle(list);
