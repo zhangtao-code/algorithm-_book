@@ -1,8 +1,24 @@
-package cacpter2.cacpter2_1;
+package cacpter2.cacpter2_1.common;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
 public class Insert {
     public static void main(String []args){
-        int []array={1,342,546,67,78455,33,423,4234,45,34,5,57};
+        List<Integer> list=new ArrayList<>();
+        list.add(1);
+        list.add(2);
+        list.add(3);
+        list.add(4);
+        list.add(5);
+        list.add(6);
+        list.add(7);
+        Collections.shuffle(list);
+        int []array=new int[list.size()];
+        for (int i = 0; i < list.size(); i++) {
+            array[i]=list.get(i);
+        }
         long time=System.nanoTime();
         insertSort(array);
         System.out.println(System.nanoTime()-time);

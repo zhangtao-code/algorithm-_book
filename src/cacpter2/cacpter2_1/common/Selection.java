@@ -1,4 +1,4 @@
-package cacpter2.cacpter2_1;
+package cacpter2.cacpter2_1.common;
 
 public class Selection {
     public static void main(String []args){
