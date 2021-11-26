@@ -24,8 +24,10 @@ public class Merge {
         long time=System.nanoTime();
 
         mergeSort(clone);
-        System.out.println(time+"\t\t\t"+(System.nanoTime()-time));
-
+       // System.out.println(time+"\t\t\t"+(System.nanoTime()-time));
+        for (int i : clone) {
+            System.out.print(i+"\t");
+        }
         System.out.println();
         clone=array.clone();
         for (int i : clone) {
@@ -34,9 +36,9 @@ public class Merge {
         time=System.nanoTime();
 
         Insert.insertSort(clone);
-        System.out.println(time+"\t\t\t"+(System.nanoTime()-time));
+        //System.out.println(time+"\t\t\t"+(System.nanoTime()-time));
         for (int i : clone) {
-         //   System.out.print(i+"\t");
+           System.out.print(i+"\t");
         }
         System.out.println();
         System.out.println(all);
@@ -65,11 +67,13 @@ public class Merge {
             for (int i = mid+1; i <=high; i++) {
                 temp[i]=array[i];
             }
-            for (int i = mid; i >=low; i--) {
-                array[high-mid+i]=array[i];//平移过去
+            int value=high-mid;
+            for (int i = mid; i >= low; i--) {//前部分后移
+                array[i+value]=array[i];
             }
-            for (int i = low; i <low+high-mid; i++) {
-                array[i]=temp[mid+1+i-low];
+             value=mid-low+1;
+            for (int i = high; i >mid; i--) {//后部分迁移
+                array[i-value]=temp[i];
             }
             return;
         }
