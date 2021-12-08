@@ -1,0 +1,245 @@
+mybatis:
+  type-aliases-package: com.ihuman.umpush.model
+  mapper-locations: classpath:mapper/*.xml
+server:
+  tomcat:
+    threads:
+      min-spare: 20
+      max: 2000
+    connection-timeout: 10000
+  port: 8888
+rpc:
+  umpush:
+    name: umpush
+    host: http://msg.umeng.com
+spring:
+  datasource:
+    username: ihuman
+    password: ihuman123!@#
+    url: jdbc:mysql://172.21.0.2:3306/push?autoReconnect=true&allowMultiQueries=true&useUnicode=true&characterEncoding=utf-8&useSSL=false&allowMultiQueries=true&serverTimezone=GMT%2B8
+    hikari:
+      pool-name: hikari-conn-pool
+      maximum-pool-size: 60
+      minimum-idle: 5
+      idle-timeout: 180000
+      connection-test-query: SELECT 1
+      connection-timeout: 30000
+logging:
+  config: classpath:ihuman-logback.xml
+log:
+  path: /web/log/push-service
+secret:
+  app[0]:
+    appid: 1
+    appKey: qwertyusdfghjklzxcvbnm1234567890
+  app[1]:
+    appid: 2
+    appKey: 987210mnbvcxzlkjhgfdsapoiuytrewq
+  app[2]:
+    appid: 3
+    appKey: asdfjdf9846780-38cvapqoiu.,/+[]|
+  app[3]:
+    appid: 4
+    appKey: 987210mnbvcxzlkjhgfdsapoiuytrewq
+  app[4]:
+    appid: 5
+    appKey: 987210mnbvcxzlkjhgfdsapoiuytrewq
+  app[5]:
+    appid: 6
+    appKey: 987210mnbvcxzlkjhgfdsapoiuytrewq
+  app[6]:
+    appid: 7
+    appKey: 987210mnbvcxzlkjhgfdsapoiuytrewq
+  app[7]:
+    appid: 8
+    appKey: 987210mnbvcxzlkjhgfdsapoiuytrewq
+  app[8]:
+    appid: 9
+    appKey: 987210mnbvcxzlkjhgfdsapoiuytrewq
+  app[9]:
+    appid: 10
+    appKey: 987210mnbvcxzlkjhgfdsapoiuytrewq
+  app[10]:
+    appid: 11
+    appKey: qwertyusdfghjklzxcvbnm1234567890
+  app[11]:
+    appid: 12
+    appKey: 987210mnbvcxzlkjhgfdsapoiuytrewq
+  app[12]:
+    appid: 13
+    appKey: 987210mnbvcxzlkjhgfdsapoiuytrewq
+  app[13]:
+    appid: 14
+    appKey: 987210mnbvcxzlkjhgfdsapoiuytrewq
+  app[14]:
+    appid: 15
+    appKey: 987210mnbvcxzlkjhgfdsapoiuytrewq
+  app[15]:
+    appid: 16
+    appKey: 987210mnbvcxzlkjhgfdsapoiuytrewq
+  app[16]:
+    appid: 17
+    appKey: 987210mnbvcxzlkjhgfdsapoiuytrewq
+  app[17]:
+    appid: 18
+    appKey: 987210mnbvcxzlkjhgfdsapoiuytrewq
+  app[18]:
+    appid: 19
+    appKey: 987210mnbvcxzlkjhgfdsapoiuytrewq
+  app[19]:
+    appid: 20
+    appKey: 987210mnbvcxzlkjhgfdsapoiuytrewq
+  app[20]:
+    appid: 21
+    appKey: qwertyusdfghjklzxcvbnm1234567890
+  app[21]:
+    appid: 22
+    appKey: 987210mnbvcxzlkjhgfdsapoiuytrewq
+  app[22]:
+    appid: 23
+    appKey: 987210mnbvcxzlkjhgfdsapoiuytrewq
+  app[23]:
+    appid: 24
+    appKey: 987210mnbvcxzlkjhgfdsapoiuytrewq
+  app[24]:
+    appid: 25
+    appKey: 987210mnbvcxzlkjhgfdsapoiuytrewq
+  app[25]:
+    appid: 26
+    appKey: 987210mnbvcxzlkjhgfdsapoiuytrewq
+  app[26]:
+    appid: 27
+    appKey: 987210mnbvcxzlkjhgfdsapoiuytrewq
+  app[27]:
+    appid: 28
+    appKey: 987210mnbvcxzlkjhgfdsapoiuytrewq
+  app[28]:
+    appid: 29
+    appKey: 987210mnbvcxzlkjhgfdsapoiuytrewq
+  app[29]:
+    appid: 30
+    appKey: 987210mnbvcxzlkjhgfdsapoiuytrewq
+  app[30]:
+    appid: 31
+    appKey: 987210mnbvcxzlkjhgfdsapoiuytrewq
+  app[31]:
+    appid: 32
+    appKey: 987210mnbvcxzlkjhgfdsapoiuytrewq
+  app[32]:
+    appid: 33
+    appKey: 987210mnbvcxzlkjhgfdsapoiuytrewq
+  app[33]:
+    appid: 34
+    appKey: 987210mnbvcxzlkjhgfdsapoiuytrewq
+  app[34]:
+    appid: 35
+    appKey: 987210mnbvcxzlkjhgfdsapoiuytrewq
+  app[35]:
+    appid: 60
+    appKey: 987210mnbvcxzlkjhgfdsapoiuytrewq
+  app[36]:
+    appid: 100
+    appKey: 987210mnbvcxzlkjhgfdsapoiuytrewq
+  common: 123456789
+push:
+  appId[0]:
+    appId: 1
+    name: 识字
+    environment[0]:
+      environment: test
+      platform[0]:
+        platform: android
+        appkey: 5799781ce0f55a56dc000034
+        secret: pzemfg8x0hxgz4kcfu6suoo7jjdnimjz
+      platform[1]:
+        platform: ios
+        appkey: 56fb80c767e58e557b001d2c
+        secret: oxc7lv3mgmxet2qe71xz0doywjuxa08k
+  appId[1]:
+    appId: 3
+    name: 数学
+    environment[0]:
+      environment: test
+      platform[0]:
+        platform: android
+        appkey: 5aa8c143f29d9809e00002dc
+        secret: 588jo302jsc0k8unntrekulp03kxpgsc
+      platform[1]:
+        platform: ios
+        appkey: 5aa8c0edf43e481736000297
+        secret: iirwq4wgnht681v92yw3rtfw0jdokiy3
+  appId[2]:
+    appId: 6
+    name: 英语
+    environment[0]:
+      environment: test
+      platform[0]:
+        platform: android
+        appkey: 5a372ea5a40fa32ad20000fe
+        secret: dg3cjljhullimi5wxm6poj6dvfkstvcc
+      platform[1]:
+        platform: ios
+        appkey: 5a372e85f43e48458b00014f
+        secret: rvhevpemvk8as1ge0evl81zfq7ix29ef
+  appId[3]:
+    appId: 8
+    name: 拼音
+    environment[0]:
+      environment: test
+      platform[0]:
+        platform: android
+        appkey: 5dc2acc6570df3328e00090e
+        secret: gbulkrob6kp3igph8ty8bm4htqwujdcg
+      platform[1]:
+        platform: ios
+        appkey: 5dc2ac923fc195e8b0000a4a
+        secret: meaevc2b4njddvrpp6ohvy8jcmezdyzk
+  appId[4]:
+    appId: 5
+    name: 绘本
+    environment[0]:
+      environment: test
+      platform[0]:
+        platform: android
+        appkey: 59671bd6310c9361fe0012fe
+        secret: yw8djypzr5a9tm6ir56ta7ybkwbhlir0
+      platform[1]:
+        platform: ios
+        appkey: 59689f60f43e4853e700000f
+        secret: 1c0lmjrg9jng5nbwkbr3nemnt6s3fkdd
+  appId[5]:
+    appId: 12
+    name: 学堂老师端
+    environment[0]:
+      environment: test
+      platform[0]:
+        platform: android
+        appkey: 60f7d5fa999517176d67dbd6
+        secret: gtruyzva9s7tqb7o6rd9bvj41f8mzuwn
+      platform[1]:
+        platform: ios
+        appkey: 60f7d499022cc13d44aa1fe0
+        secret: rxhstxxg6gg1onv8xokd5lhaw0kapi1n
+  appId[6]:
+    appId: 13
+    name: 学堂学生端
+    environment[0]:
+      environment: test
+      platform[0]:
+        platform: android
+        appkey: 60f7d587022cc13d44aa1fe4
+        secret: osccqgqohqx7xcpnemdvgk8z1mmyxwok
+      platform[1]:
+        platform: ios
+        appkey: 60f7d47c022cc13d44aa1fdf
+        secret: rjfvjmi5egpbdmepwvcl8gohvu0wf6ys
+    environment[1]:
+      environment: prod
+      platform[0]:
+        platform: android
+        appkey: 60f7c5e63c20d81eaf3bb179
+        secret: kakh7jtejdvovfpixgbgkehodwrjcetm
+      platform[1]:
+        platform: ios
+        appkey: 60f7c85b022cc13d44aa1fd2
+        secret: obgqtuw92eh97hi5ekpzdjtxz16b77ho
